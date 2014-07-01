@@ -32,7 +32,7 @@ class Cave
 			end
 			@output << count
 		end
-		@output.join(" ")
+		@output[0..-2].join(" ")
 	end
 end
 
