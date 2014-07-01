@@ -87,12 +87,12 @@ def run(file)
 	water = Water.new(cave.stop_point)
 	status = cave.grid
 	until status == "DONE"
-		->(a,b,c){x=a.method(b);a.send(c,b){send c,b,&x;false};print"\e[2J\e[H \e[D"}[irb_context,:echo?,:define_singleton_method]
+		system "clear" or system "cls"
 		puts cave.grid.map{|i| i.join('')}.join("\n")+"\n\n"
 		cave.grid = status.dup
 		status = water.flow(cave.grid)
 	end
-	puts "\n\n#{cave.down_count_char}\n\n -- COMPLETED! -- \n\n"
+	puts cave.down_count_char
 end
 
 run("simple_cave.txt")
