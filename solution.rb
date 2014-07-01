@@ -65,20 +65,20 @@ class Water
 	end
 	
 	private
-	def flow_down(grid)
+	def flow_core(val, grid)
 		sleep(0.1)
 		@count += 1
-		@current_pos[1] += 1 
+		@current_pos[val] += 1 
 		grid[@current_pos[1]][@current_pos[0]] = @water
 		grid
 	end
 
+	def flow_down(grid)
+		flow_core(1,grid)
+	end
+
 	def flow_right(grid)
-		sleep(0.1)
-		@count += 1
-		@current_pos[0] += 1 
-		grid[@current_pos[1]][@current_pos[0]] = @water
-		grid
+		flow_core(0,grid)
 	end
 end
 
