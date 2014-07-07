@@ -65,6 +65,7 @@ class Water
 	end
 	
 	private
+
 	def forward(direction, grid)
 		sleep(0.1)
 		@count += 1
@@ -73,13 +74,10 @@ class Water
 		grid
 	end
 
-	def flow_down(grid)
-		forward(1,grid)
-	end
+	def flow_down(grid); forward(1,grid); end
 
-	def flow_right(grid)
-		forward(0,grid)
-	end
+	def flow_right(grid); forward(0,grid); end
+
 end
 
 def run(file)
